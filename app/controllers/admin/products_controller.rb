@@ -18,7 +18,9 @@ class Admin::ProductsController < ProductsController
     end
   end
 
-  def edit ; end
+  def edit
+    @photo = @product.build_photo if @product.photo.nil?
+  end
 
   def update
     if @product.update(product_params)

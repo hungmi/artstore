@@ -9,7 +9,9 @@
     <tbody>
       <td><%= user.email %></td>
       <td><%= user.admin? ? '管理者' : '一般使用者' %></td>
-      <td><%= button_to "轉換為#{user.admin? ? '一般使用者' : '管理者'}", admin_user_transfer_path(user) %></td>
+      <% if User.where(is_admin: true).all.size > 1 %>
+        <td><%= button_to "轉換為#{user.admin? ? '一般使用者' : '管理者'}", admin_user_transfer_path(user) %></td>
+      <% end %>
     </tbody>
   <% end %>
 </table>
