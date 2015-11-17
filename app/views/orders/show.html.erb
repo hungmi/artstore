@@ -62,6 +62,7 @@
     </table>
 
     <div class="pull-right">
+      <%= link_to "刪除訂單", order_path(@order.token), method: :delete, class: 'btn btn-danger' %>
       <%= link_to("以信用卡付款", pay_with_credit_card_order_path(@order.token), class: "btn btn-lg btn-danger") %>
       <%= link_to("以 ATM 付款", "#", class: "btn btn-lg btn-danger") %>
     </div>

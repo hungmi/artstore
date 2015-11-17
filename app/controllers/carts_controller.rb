@@ -8,4 +8,9 @@ class CartsController < ApplicationController
 
   def index
   end
+
+  def destroy
+    current_cart.destroy
+    redirect_to root_path, notice: "購物車已清空"
+  end
 end
