@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'cart_items/destroy'
+
   get 'cart/index'
 
   devise_for :users
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
       post :checkout
     end
   end
+  resources :items, controller: "cart_items"
+
   resources :orders do
     member do
       get :pay_with_credit_card

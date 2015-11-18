@@ -3,6 +3,7 @@ class CreateCartItems < ActiveRecord::Migration
     create_table :cart_items do |t|
       t.references :product
       t.references :cart
+      t.integer :quantity, default: 1
 
       t.timestamps null: false
     end

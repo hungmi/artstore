@@ -14,5 +14,5 @@ u.is_admin = true
 u.save
 
 for i in 1..10 do
-  Product.create(title: "Product#{i}", price: rand(1000))
+  Product.create(title: "Product#{i}", price: rand(1000), quantity: rand(5))
 end

@@ -10,7 +10,11 @@
       <% end %>
       <p class="product-info">
         <%= product.title.capitalize %>
-        $ <%= product.price %>
+        <% if product.quantity.zero? %>
+          已銷售一空
+        <% else %>
+          $ <%= product.price %>
+        <% end %>
       </p>
     </div>
   <% end %>

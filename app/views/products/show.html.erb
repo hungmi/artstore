@@ -9,8 +9,12 @@
   <div class="col-md-4 col-xs-12">
     <h2 class="product-title"><%= @product.title.capitalize %></h2>
     <div class="well"><%= @product.description %></div>
-    <p>數量：<%= @product.quantity %></p>
-    <p class="product-price">＄ <%= @product.price %></p>
-    <%= link_to '加入購物車', add_to_cart_product_path, method: :post, class: 'btn btn-danger btn-lg pull-right' %>
+    <% if @product.quantity.zero? %>
+      <p>已銷售一空</p>      
+    <% else %>
+      <p>數量：<%= @product.quantity %></p>
+      <p class="product-price">＄ <%= @product.price %></p>
+      <%= link_to '加入購物車', add_to_cart_product_path, method: :post, class: 'btn btn-danger btn-lg pull-right' %>
+    <% end %>
   </div>
 </div>
