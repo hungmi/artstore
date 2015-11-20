@@ -62,7 +62,7 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to "清除購物車", cart_path(current_cart), method: :delete, class: 'btn btn-danger pull-right' %>
+      <%= link_to "清除購物車", clean_cart_path(current_cart), method: :delete, class: 'btn btn-danger pull-right' %>
       <%= link_to("確認結賬", checkout_carts_path, method: :post, class: "btn btn-lg btn-success pull-right") %>
     </div>
   </div>

@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     collection do
       post :checkout
     end
+    member do
+      delete :clean
+    end
   end
   resources :items, controller: "cart_items"
 
@@ -28,6 +31,9 @@ Rails.application.routes.draw do
     member do
       get :pay_with_credit_card
     end
+  end
+  namespace :account do
+    resources :orders
   end
 
   root 'products#index'

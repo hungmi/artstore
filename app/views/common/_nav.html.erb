@@ -29,6 +29,12 @@
                 <li><%= link_to("新增產品", new_admin_product_path) %></li>
                 <li role="separator" class="divider"></li>
               <% end %>
+              <li class="dropdown-header">訂單</li>
+              <li>
+                <%= link_to account_orders_path do  %>
+                  個人訂單列表 (<%= render_orders_count %>)
+                <% end %>
+              </li>
               <li><%= link_to("登出", destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>

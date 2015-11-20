@@ -25,4 +25,7 @@ module ApplicationHelper
   def render_cart_total_price(cart)
     cart.total_price
   end
+  def render_orders_count
+    current_user.orders.count
+  end
 end
