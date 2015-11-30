@@ -1,0 +1,10 @@
+zh-TW:
+  activerecord:
+    attributes:
+      order:
+        aasm_state/order_placed: 已下單
+        aasm_state/paid: 已付款
+        aasm_state/shipping: 出貨中
+        aasm_state/shipped: 已送達
+        aasm_state/order_cancelled: 取消訂單
+        aasm_state/good_returned: 退貨
