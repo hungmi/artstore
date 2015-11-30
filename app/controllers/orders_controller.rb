@@ -32,11 +32,7 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.build(order_params)
     if @order.save
-      @order.build_item_cache_from_cart(current_cart)
-      @order.calculate_total!(current_cart)
-      current_cart.clean!
-      # 因為我們還沒實作用 mailgun 寄信 ( 回家作業 1 & 2 )，所以要暫時先把訂單建立時寄封通知信的功能先關掉
-      # OrderMailer.notify_order_placed(@order).deliver!
+      OrderPlacingService.new(current_cart, @order).place_order!
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
